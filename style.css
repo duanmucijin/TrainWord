@@ -1,0 +1,63 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #111;
+  background: #fff;
+  text-align: center;
+}
+
+.hero {
+  padding: 100px 20px;
+}
+
+.hero h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.section {
+  padding: 80px 20px;
+  max-width: 600px;
+  margin: auto;
+}
+
+.section h2 {
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin: 10px 0;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn {
+  padding: 12px 20px;
+  border: 1px solid #000;
+  text-decoration: none;
+  color: #000;
+  border-radius: 8px;
+}
+
+.btn.primary {
+  background: #000;
+  color: #fff;
+}
+
+.cta {
+  padding: 100px 20px;
+}
