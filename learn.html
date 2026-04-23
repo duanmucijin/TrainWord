@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>RailWords 学习</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+<!-- 顶部状态栏 -->
+<header class="flex justify-between items-center px-4 py-3 bg-white shadow-sm">
+  <div class="font-bold text-green-500 text-xl">RailWords</div>
+
+  <div class="flex gap-4 text-sm items-center">
+    <div>🔥 7</div>
+    <div>💎 120</div>
+    <div>❤️ 5</div>
+  </div>
+</header>
+
+<!-- 当前学习体系选择 -->
+<section class="px-4 py-4 bg-white mt-2">
+  <h2 class="font-bold mb-3">选择学习阶段</h2>
+
+  <div class="grid grid-cols-2 gap-3 text-center text-sm">
+
+    <div class="border p-3 rounded-xl bg-green-50">四级词汇</div>
+    <div class="border p-3 rounded-xl">六级词汇</div>
+    <div class="border p-3 rounded-xl">雅思词汇</div>
+    <div class="border p-3 rounded-xl">考研英语</div>
+
+  </div>
+</section>
+
+<!-- 火车进度路径 -->
+<section class="px-4 py-6">
+
+  <h2 class="font-bold mb-4">你的学习路线</h2>
+
+  <div class="flex flex-col items-center gap-6">
+
+    <!-- 节点1 -->
+    <div class="flex flex-col items-center">
+      <div class="w-16 h-16 bg-green-500 text-white rounded-full flex items-center justify-center text-xl">
+        🚂
+      </div>
+      <p class="mt-2 text-sm">第1站 · 基础词汇</p>
+    </div>
+
+    <!-- 连线 -->
+    <div class="w-1 h-10 bg-gray-300"></div>
+
+    <!-- 节点2 -->
+    <div class="flex flex-col items-center">
+      <div class="w-16 h-16 bg-green-400 text-white rounded-full flex items-center justify-center text-xl">
+        📦
+      </div>
+      <p class="mt-2 text-sm">第2站 · 高频词</p>
+    </div>
+
+    <!-- 连线 -->
+    <div class="w-1 h-10 bg-gray-300"></div>
+
+    <!-- 锁定节点 -->
+    <div class="flex flex-col items-center opacity-50">
+      <div class="w-16 h-16 bg-gray-300 rounded-full flex items-center justify-center text-xl">
+        🔒
+      </div>
+      <p class="mt-2 text-sm">第3站 · 进阶</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- 当前任务 -->
+<section class="px-4 py-4 bg-white mt-4">
+
+  <h2 class="font-bold mb-3">当前任务</h2>
+
+  <div class="border rounded-xl p-4">
+
+    <p class="text-lg font-bold">装载单词到车厢</p>
+    <p class="text-sm text-gray-500 mt-1">
+      完成5道题，推进火车前进
+    </p>
+
+    <div class="mt-4 h-3 bg-gray-200 rounded-full">
+      <div class="h-3 bg-green-500 rounded-full" style="width:40%"></div>
+    </div>
+
+    <button class="mt-4 w-full bg-green-500 text-white py-3 rounded-xl">
+      开始任务
+    </button>
+
+  </div>
+
+</section>
+
+<!-- 底部导航 -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white border-t flex justify-around py-2 text-sm">
+
+  <div class="text-green-500">🏠<br>学习</div>
+  <div>🧠<br>复习</div>
+  <div>🏆<br>排行</div>
+  <div>👤<br>我的</div>
+
+</nav>
+
+</body>
+</html>

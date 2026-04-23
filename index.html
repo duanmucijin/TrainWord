@@ -3,91 +3,41 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>TrainWords</title>
-<link rel="stylesheet" href="style.css" />
+<title>RailWords</title>
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-<header class="nav">
-  <div class="logo">
-    <img src="assets/logo.png"/>
-    <span>TrainWords</span>
-  </div>
+<div class="bg-glow"></div>
 
-  <a href="https://your-download-link.com" class="btn small">下载</a>
+<header class="top">
+  <img class="logo" src="assets/logo.png" alt="logo" />
+  <button class="ghost-btn">Download</button>
 </header>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-left">
-    <h1>你以为你在玩游戏<br>其实你在记单词</h1>
-    <p>学习不再需要专注，它会在过程中自然发生</p>
+<main class="hero">
 
-    <div class="buttons">
-      <a href="https://your-download-link.com" class="btn primary">立即体验</a>
-      <a href="#" class="btn ghost">观看演示</a>
-    </div>
+  <img class="core" src="assets/iconcenter.png" alt="train-core">
+
+  <h1>
+    每一个单词<br/>
+    都是一段轨道
+  </h1>
+
+  <p>
+    点击开始，让火车继续前进
+  </p>
+
+  <div class="actions">
+    <button class="primary-btn">开始体验</button>
+    <button class="secondary-btn" id="demoBtn">查看演示</button>
   </div>
 
-  <div class="hero-right">
-    <img src="assets/preview.png" />
-  </div>
-</section>
+</main>
 
-<!-- EXPERIENCE -->
-<section class="section">
-  <h2>真实体验</h2>
+<div class="track-line"></div>
 
-  <div class="experience">
-
-    <img id="mainScreen" src="assets/screen1.png" class="main-screen"/>
-
-    <div class="thumbs">
-      <img src="assets/screen1.png" onclick="changeScreen(this)" />
-      <img src="assets/screen2.png" onclick="changeScreen(this)" />
-      <img src="assets/screen3.png" onclick="changeScreen(this)" />
-    </div>
-
-    <p id="screenText">在操作中自然接触单词</p>
-
-  </div>
-</section>
-
-<!-- VALUE -->
-<section class="section light">
-  <h2>为什么它有效</h2>
-
-  <div class="grid">
-    <div class="card">
-      <h3>不需要坚持</h3>
-      <p>学习不再依赖意志力</p>
-    </div>
-
-    <div class="card">
-      <h3>在过程中记住</h3>
-      <p>记忆来自重复体验</p>
-    </div>
-
-    <div class="card">
-      <h3>没有学习感</h3>
-      <p>你不会意识到你在学习</p>
-    </div>
-  </div>
-</section>
-
-<!-- FEEL -->
-<section class="section feel">
-  <h2>你不会“去学习”</h2>
-  <p>学习会在你玩的时候发生</p>
-</section>
-
-<!-- CTA -->
-<section class="cta">
-  <h2>开始一段轻松的学习旅程</h2>
-  <a href="https://your-download-link.com" class="btn primary">下载App</a>
-</section>
-
-<script src="script.js"></script>
+<script src="app.js"></script>
 </body>
 </html>

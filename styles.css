@@ -1,0 +1,189 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC";
+  background: #05070d;
+  color: white;
+  overflow: hidden;
+}
+
+/* 背景光 → 更有空间深度 */
+.bg-glow {
+  position: absolute;
+  width: 900px;
+  height: 900px;
+  top: -300px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(34,197,94,0.35), transparent 60%);
+  filter: blur(120px);
+  z-index: 0;
+}
+
+/* 顶部 */
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 48px;
+}
+
+.logo {
+  height: 34px;
+  filter: brightness(1.1);
+}
+
+/* 按钮（重点强化） */
+.primary-btn {
+  background: linear-gradient(135deg, #22c55e, #06b6d4);
+  border: none;
+  padding: 18px 42px;
+  border-radius: 14px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 20px 60px rgba(34,197,94,0.25);
+  transition: 0.25s;
+}
+
+.primary-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 25px 80px rgba(34,197,94,0.35);
+}
+
+.secondary-btn {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 18px 42px;
+  border-radius: 14px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.ghost-btn {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 10px 16px;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+/* 主体 */
+.hero {
+  text-align: center;
+  margin-top: 100px;
+  position: relative;
+  z-index: 2;
+}
+
+.core-visual {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.core {
+  width: 96px;
+  height: 96px;
+  border-radius: 18px;
+  
+  /* 关键：让它“像系统核心” */
+  filter: drop-shadow(0 0 40px rgba(34,197,94,0.55));
+  
+  transform: translateY(0);
+  animation: float 2.4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+
+/* 火车核心（抽象化，不用emoji） */
+.train-core {
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #22c55e, #06b6d4);
+  box-shadow: 0 0 40px rgba(34,197,94,0.4);
+  animation: float 2.2s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+h1 {
+  font-size: 52px;
+  line-height: 1.05;
+  margin-top: 20px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+p {
+  opacity: 0.55;
+  margin-top: 12px;
+}
+
+.actions {
+  margin-top: 34px;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+}
+
+/* 主按钮：更“重” */
+.primary-btn {
+  background: linear-gradient(135deg, #22c55e, #06b6d4);
+  border: none;
+  padding: 20px 56px;
+  border-radius: 16px;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+
+  /* 关键：更强存在感 */
+  box-shadow: 
+    0 25px 80px rgba(34,197,94,0.35),
+    0 0 0 1px rgba(255,255,255,0.08);
+  
+  transition: all 0.25s ease;
+}
+
+.primary-btn:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 35px 100px rgba(34,197,94,0.45);
+}
+
+/* 次按钮 */
+.secondary-btn {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.18);
+  padding: 20px 56px;
+  border-radius: 16px;
+  color: white;
+  font-size: 16px;
+}
+
+/* 轨道 */
+.track-line {
+  position: absolute;
+  bottom: 110px;
+  width: 100%;
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(34,197,94,0.6),
+    transparent
+  );
+
+  opacity: 0.35;
+  z-index: 1;
+}
