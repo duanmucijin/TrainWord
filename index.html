@@ -1,50 +1,71 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>个人主页</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WordExpress — 单词即动力</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
-<div class="container">
+<nav class="nav">
+    <div class="nav-inner">
+        <div class="logo-area">
+            <img src="assets/logo.png" alt="logo">
+            <span>WordExpress</span>
+        </div>
+        <a href="https://testflight.apple.com/join/1dfVY8fk" class="nav-link">加入 TestFlight</a>
+    </div>
+</nav>
 
-  <h1>个人主页</h1>
+<header class="hero">
+    <div class="hero-container">
+        <div class="hero-content">
+            <h1>把枯燥的单词<br>装进<span class="highlight">高速列车</span></h1>
+            <p>独创“分散注意力学习法”。我们不卖课程，我们只卖“动力”。在经营铁路的爽感中，不知不觉通关海量词库。</p>
+            <a href="https://testflight.apple.com/join/1dfVY8fk" class="cta-button">立即免费开始</a>
+        </div>
+        
+        <div class="hero-phone">
+            <div class="phone-frame">
+                <img src="assets/hero.png" alt="App Screen">
+            </div>
+        </div>
+    </div>
+</header>
 
-  <p class="desc">
-    一个用于记录学习与实践的简单网站
-  </p>
+<section class="ticker-section">
+    <div class="ticker-move">
+        <span>CET4</span><span>CET6</span><span>TEM8</span><span>考研英语</span><span>IELTS</span><span>TOEFL</span><span>SAT</span><span>GRE</span><span>GMAT</span><span>高考英语</span>
+        <span>CET4</span><span>CET6</span><span>TEM8</span><span>考研英语</span><span>IELTS</span><span>TOEFL</span><span>SAT</span><span>GRE</span><span>GMAT</span><span>高考英语</span>
+    </div>
+</section>
 
-  <div class="block">
-    <h2>关于本站</h2>
-    <p>
-      本站为个人搭建的练习站点，用于前端开发与产品设计相关内容的记录与尝试。
-    </p>
-  </div>
+<section class="steps">
+    <div class="step-grid">
+        <div class="step-item">
+            <div class="step-img"><img src="assets/shot1.png"></div>
+            <div class="step-text"><h3>01 检修机车</h3><p>艾宾浩斯算法驱动，精准复习。</p></div>
+        </div>
+        <div class="step-item">
+            <div class="step-img"><img src="assets/shot2.png"></div>
+            <div class="step-text"><h3>02 进站装载</h3><p>含义瞬间辨析，快速装载。</p></div>
+        </div>
+        <div class="step-item">
+            <div class="step-img"><img src="assets/shot3.png"></div>
+            <div class="step-text"><h3>03 鸣笛发车</h3><p>全速拼写，换取里程收益。</p></div>
+        </div>
+        <div class="step-item">
+            <div class="step-img"><img src="assets/shot4.png"></div>
+            <div class="step-text"><h3>04 车站装修</h3><p>爆率爽快，打造顶级枢纽。</p></div>
+        </div>
+    </div>
+</section>
 
-  <div class="block">
-    <h2>当前状态</h2>
-    <p>
-      网站正在逐步建设中，后续将持续完善内容。
-    </p>
-  </div>
-
-  <div class="block">
-    <h2>内容方向</h2>
-    <ul>
-      <li>界面设计练习</li>
-      <li>交互效果尝试</li>
-      <li>个人项目记录</li>
-    </ul>
-  </div>
-
-  <footer>
-    <p>© 2026 Personal Site</p>
-  </footer>
-
-</div>
+<footer class="footer">
+    <div class="rail-line"></div>
+    <p>© 2026 WordExpress. 重新定义边玩边学。</p>
+</footer>
 
 </body>
 </html>
