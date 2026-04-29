@@ -2,70 +2,104 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WordExpress — 单词即动力</title>
+    <title>火车单词 — 每一站，皆进步</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<nav class="nav">
-    <div class="nav-inner">
-        <div class="logo-area">
-            <img src="assets/logo.png" alt="logo">
-            <span>WordExpress</span>
-        </div>
-        <a href="https://testflight.apple.com/join/1dfVY8fk" class="nav-link">加入 TestFlight</a>
+<nav class="navbar">
+    <img src="assets/logo.png" class="nav-logo">
+    <h2>TrainWord</h2>
+    <div class="nav-links">
+        <a href="https://testflight.apple.com/join/1dfVY8fk" class="nav-btn-main">立即发车</a>
     </div>
 </nav>
 
 <header class="hero">
-    <div class="hero-container">
-        <div class="hero-content">
-            <h1>把枯燥的单词<br>装进<span class="highlight">高速列车</span></h1>
-            <p>独创“分散注意力学习法”。我们不卖课程，我们只卖“动力”。在经营铁路的爽感中，不知不觉通关海量词库。</p>
-            <a href="https://testflight.apple.com/join/1dfVY8fk" class="cta-button">立即免费开始</a>
+    <div class="hero-main">
+        <div class="hero-text">
+            <h1>把背单词，变成<br><span class="blue-text">一列正在运行的火车</span></h1>
+            <p>基于记忆科学（艾宾浩斯遗忘曲线）与主动回忆机制，把碎片时间，变成可持续增长的记忆系统。让学习不依赖意志力，而依赖系统设计。</p>
+            
+            <div class="vocab-network">
+                <div class="v-line">
+                    <span class="v-tag t-blue">CET4</span>
+                    <span class="v-tag t-green">CET6</span>
+                    <span class="v-tag t-yellow">考研</span>
+                    <span class="v-tag t-purple">IELTS</span>
+                </div>
+                <div class="v-line" style="margin-left: 20px;">
+                    <span class="v-tag t-red">TOEFL</span>
+                    <span class="v-tag t-blue">SAT</span>
+                    <span class="v-tag t-orange">GRE/GMAT</span>
+                    <span class="v-tag t-green">高考词汇</span>
+                </div>
+                <div class="v-line">
+                    <span class="v-tag t-purple">专四</span>
+                    <span class="v-tag t-red">专八</span>
+                    <span class="v-line-connect">全量覆盖</span>
+                </div>
+            </div>
+
+            <a href="https://testflight.apple.com/join/1dfVY8fk" class="btn-express">加入 TestFlight 免费测试</a>
         </div>
-        
-        <div class="hero-phone">
-            <div class="phone-frame">
-                <img src="assets/hero.png" alt="App Screen">
+
+        <div class="hero-mockup">
+            <div class="phone-case">
+                <img src="assets/hero.png" class="full-shot">
             </div>
         </div>
     </div>
 </header>
 
-<section class="ticker-section">
-    <div class="ticker-move">
-        <span>CET4</span><span>CET6</span><span>TEM8</span><span>考研英语</span><span>IELTS</span><span>TOEFL</span><span>SAT</span><span>GRE</span><span>GMAT</span><span>高考英语</span>
-        <span>CET4</span><span>CET6</span><span>TEM8</span><span>考研英语</span><span>IELTS</span><span>TOEFL</span><span>SAT</span><span>GRE</span><span>GMAT</span><span>高考英语</span>
+<div class="rolling-bar">
+    <div class="rolling-inner">
+        <span>ENGLISH STUDY ON TRACK</span><span>单词即动力</span><span>EPISODE: RAILWAY</span><span>每一站皆进步</span><span>ENGLISH STUDY ON TRACK</span><span>单词即动力</span>
+    </div>
+</div>
+
+
+<section class="gameplay-flow">
+    <h2 class="section-title">玩中学的四重奏</h2>
+    
+    <div class="shot-grid">
+        <div class="shot-card">
+            <div class="shot-frame"><img src="assets/shot1.png"></div>
+            <div class="shot-desc">
+                <div class="badge">01 进站装载</div>
+                <h3>看词择意</h3>
+                <p>只有选对含义，货物才能装载。在毫秒级反应中激活瞬时记忆。</p>
+            </div>
+        </div>
+
+        <div class="shot-card">
+            <div class="shot-frame"><img src="assets/shot2.png"></div>
+            <div class="shot-desc">
+                <div class="badge">02 鸣笛发车</div>
+                <h3>拼写测试</h3>
+                <p>单词即燃料。全速输入拼写，看着列车时速飙升，爽感拉满。</p>
+            </div>
+        </div>
+
+        <div class="shot-card">
+            <div class="shot-frame"><img src="assets/shot3.png"></div>
+            <div class="shot-desc">
+                <div class="badge">03 核心研发</div>
+                <h3>海量火车研发</h3>
+                <p>利用学习收益解锁全球名车。知识越丰富，你的车队越豪华。</p>
+            </div>
+        </div>
+
+        <div class="shot-card">
+            <div class="shot-frame"><img src="assets/shot4.png"></div>
+            <div class="shot-desc">
+                <div class="badge">04 知识图谱</div>
+                <h3>系统化词库</h3>
+                <p>艾宾浩斯逻辑全覆盖。每一组单词的遗忘状态，尽在掌握。</p>
+            </div>
+        </div>
     </div>
 </section>
-
-<section class="steps">
-    <div class="step-grid">
-        <div class="step-item">
-            <div class="step-img"><img src="assets/shot1.png"></div>
-            <div class="step-text"><h3>01 检修机车</h3><p>艾宾浩斯算法驱动，精准复习。</p></div>
-        </div>
-        <div class="step-item">
-            <div class="step-img"><img src="assets/shot2.png"></div>
-            <div class="step-text"><h3>02 进站装载</h3><p>含义瞬间辨析，快速装载。</p></div>
-        </div>
-        <div class="step-item">
-            <div class="step-img"><img src="assets/shot3.png"></div>
-            <div class="step-text"><h3>03 鸣笛发车</h3><p>全速拼写，换取里程收益。</p></div>
-        </div>
-        <div class="step-item">
-            <div class="step-img"><img src="assets/shot4.png"></div>
-            <div class="step-text"><h3>04 车站装修</h3><p>爆率爽快，打造顶级枢纽。</p></div>
-        </div>
-    </div>
-</section>
-
-<footer class="footer">
-    <div class="rail-line"></div>
-    <p>© 2026 WordExpress. 重新定义边玩边学。</p>
-</footer>
 
 </body>
 </html>
