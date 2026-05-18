@@ -155,3 +155,47 @@ p {margin-bottom: 12px}
     font-size: 13px;
     color: #98A2B3;
 }
+
+.wx-mask {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.65);
+    justify-content: center;
+    align-items: center;
+}
+
+.wx-card {
+    background: #fff;
+    width: 80%;
+    max-width: 320px;
+    border-radius: 16px;
+    padding: 24px;
+    text-align: center;
+}
+
+.wx-step {
+    margin: 16px 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.wx-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 12px 16px;
+    background: #007aff;
+    color: #fff;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.wx-close {
+    margin-top: 12px;
+    font-size: 12px;
+    color: #999;
+}

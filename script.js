@@ -10,3 +10,24 @@ function reveal() {
 
 window.addEventListener('scroll', reveal);
 reveal();
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    var ua = navigator.userAgent.toLowerCase();
+
+    var isWeChat = ua.indexOf("micromessenger") !== -1;
+
+    if (isWeChat) {
+        var mask = document.getElementById("wx-mask");
+        if (mask) {
+            mask.style.display = "flex";
+        }
+    }
+});
+
+function closeMask() {
+    var mask = document.getElementById("wx-mask");
+    if (mask) {
+        mask.style.display = "none";
+    }
+}
