@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>火车单词 — 每一站，皆进步</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -19,7 +21,7 @@
     <div class="hero-main">
         <div class="hero-text">
             <h1>把背单词，变成<br><span class="blue-text">一列正在运行的火车</span></h1>
-            <p>基于记忆科学（艾宾浩斯遗忘曲线）与主动回忆机制，把碎片时间，变成可持续增长的记忆系统。让学习不依赖意志力，而依赖系统设计。</p>
+            <p>基于记忆科学（艾宾浩斯遗忘曲线）与主动回忆机制，把碎片时间，变成可持续增长的记忆系统。答题、装载、发车、复习，再把学习奖励建成自己的车站小镇。</p>
             
             <div class="vocab-network">
                 <div class="v-line">
@@ -107,20 +109,78 @@
     </div>
 </section>
 
+<section class="town-feature">
+    <div class="town-copy">
+        <div class="badge">NEW 车站小镇</div>
+        <h2>告别枯燥进度条，把词汇量变成你的高颜值微缩城市</h2>
+        <p class="town-lead">创新「背单词 + 沙盒模拟」机制。每一次正确记忆，都是平地起高楼的快乐。</p>
+        <div class="town-detail-list">
+            <div>
+                <h3>即时正反馈：答题解锁全球地标</h3>
+                <p>拒绝死记硬背。连续答对即可触发素材奖励，让伦敦大笨钟、纽约帝国大厦、精美绿植逐步入库，让成长清晰可见。</p>
+            </div>
+            <div>
+                <h3>沙盒级自由：你的小镇，你来规划</h3>
+                <p>告别千篇一律。解锁的所有建筑均支持自由摆放、缩放、调整层级与方向，用词汇量在掌心规划独一无二的微缩世界。</p>
+            </div>
+            <div>
+                <h3>沉浸式治愈：横屏漫游专属天际线</h3>
+                <p>美学与高效兼得。竖屏模式轻松管理素材与词汇进度，横屏一键切换全景浏览，让每一次复习都成为极度治愈的视觉享受。</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="town-showcase">
+        <div class="town-phone">
+            <img src="assets/town-portrait.jpg" alt="车站小镇素材仓库">
+        </div>
+        <div class="town-panorama">
+            <img src="assets/town-landscape-left.jpg" alt="车站小镇横屏预览左侧">
+            <img src="assets/town-landscape-right.jpg" alt="车站小镇横屏预览右侧">
+        </div>
+    </div>
+</section>
+
+<div class="town-rolling-bar">
+    <div class="town-rolling-inner">
+        <span>[ 答题解锁地标 ]</span><span>[ 自由沙盒规划 ]</span><span>[ 横屏沉浸漫游 ]</span>
+        <span>[ 答题解锁地标 ]</span><span>[ 自由沙盒规划 ]</span><span>[ 横屏沉浸漫游 ]</span>
+    </div>
+</div>
+
 <div id="wx-mask" class="wx-mask">
+    <div class="wx-top-guide">
+        <span>点击右上角 ···</span>
+        <span class="wx-top-arrow">↗</span>
+    </div>
+
     <div class="wx-card">
-        <h2>请在浏览器中打开</h2>
+        <div class="wx-card-head">
+            <img src="assets/logo.png" alt="TrainWord">
+            <div>
+                <h2>请在浏览器中打开</h2>
+                <p>微信内置浏览器无法稳定跳转 App Store</p>
+            </div>
+        </div>
 
-        <p class="wx-step">
-            点击右上角 <b>···</b><br>
-            选择 <b>“在浏览器中打开”</b>
-        </p>
+        <div class="wx-steps">
+            <div class="wx-step wx-step-mobile">
+                <b>手机微信</b>
+                <span>点右上角 <strong>···</strong>，选择 <strong>在浏览器中打开</strong></span>
+            </div>
+            <div class="wx-step wx-step-desktop">
+                <b>电脑微信</b>
+                <span>复制本站链接到浏览器，或使用浏览器打开后下载</span>
+            </div>
+        </div>
 
-        <a class="wx-btn" href="https://apps.apple.com/app/id6762613193">
-            打开 App Store
-        </a>
+        <div class="wx-actions">
+            <a class="wx-btn" href="https://apps.apple.com/app/id6762613193">打开 App Store</a>
+            <button class="wx-copy" type="button" onclick="copyPageLink()">复制链接</button>
+        </div>
 
-        <div class="wx-close" onclick="closeMask()">稍后再说</div>
+        <div id="wx-copy-tip" class="wx-copy-tip">链接已复制</div>
+        <button class="wx-close" type="button" onclick="closeMask()">继续浏览网页</button>
     </div>
 </div>
 
