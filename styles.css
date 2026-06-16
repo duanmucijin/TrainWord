@@ -269,17 +269,17 @@ p {margin-bottom: 12px}
     backdrop-filter: blur(2px);
     justify-content: flex-end;
     align-items: stretch;
-    padding: 18px 18px max(18px, env(safe-area-inset-bottom));
+    padding: 18px 16px max(22px, env(safe-area-inset-bottom));
     flex-direction: column;
 }
 
 .wx-card {
     background: #fff;
     width: 100%;
-    max-width: 440px;
+    max-width: 520px;
     margin: 0 auto;
-    border-radius: 18px;
-    padding: 18px;
+    border-radius: 20px;
+    padding: 22px;
     box-shadow: 0 18px 50px rgba(0, 0, 0, 0.22);
     text-align: left;
 }
@@ -291,11 +291,11 @@ p {margin-bottom: 12px}
     display: flex;
     align-items: center;
     gap: 8px;
-    padding: 9px 12px;
+    padding: 8px 11px;
     border-radius: 999px;
     background: rgba(255, 255, 255, 0.94);
     color: #111827;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 700;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
 }
@@ -313,80 +313,68 @@ p {margin-bottom: 12px}
 }
 
 .wx-card-head img {
-    width: 42px;
-    height: 42px;
-    border-radius: 10px;
+    width: 46px;
+    height: 46px;
+    border-radius: 11px;
 }
 
 .wx-card-head h2 {
-    margin: 0 0 4px;
-    font-size: 18px;
+    margin: 0 0 5px;
+    font-size: 21px;
     color: #111827;
 }
 
 .wx-card-head p {
     margin: 0;
-    font-size: 12px;
+    font-size: 13px;
     color: #667085;
 }
 
 .wx-steps {
     display: grid;
-    gap: 10px;
-    margin: 18px 0 14px;
+    gap: 12px;
+    margin: 22px 0 18px;
 }
 
 .wx-step {
     display: grid;
-    gap: 4px;
-    padding: 12px;
-    border-radius: 12px;
+    gap: 5px;
+    padding: 14px;
+    border-radius: 14px;
     background: #F5F8FF;
     color: #344054;
-    font-size: 13px;
+    font-size: 14px;
     line-height: 1.55;
 }
 
 .wx-step b {
     color: #007AFF;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 .wx-step strong {
     color: #111827;
 }
 
-.wx-mobile .wx-step-desktop,
-.wx-desktop .wx-step-mobile {
-    display: none;
-}
-
 .wx-actions {
-    display: flex;
-    gap: 10px;
-}
-
-.wx-btn {
-    flex: 1;
     display: block;
-    padding: 12px 14px;
-    background: #007aff;
-    color: #fff;
-    border-radius: 12px;
-    text-decoration: none;
-    text-align: center;
-    font-size: 14px;
-    font-weight: 700;
 }
 
 .wx-copy {
-    flex: 1;
+    width: 100%;
+    min-height: 46px;
     border: 1px solid #D0D5DD;
-    border-radius: 12px;
+    border-radius: 14px;
     background: #fff;
     color: #344054;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 700;
+}
+
+.wx-copy-primary {
+    border: 0;
+    background: #007AFF;
+    color: #fff;
 }
 
 .wx-copy-tip {
@@ -422,7 +410,7 @@ p {margin-bottom: 12px}
     }
 
     .wx-card {
-        width: min(440px, 92vw);
+        width: min(460px, 92vw);
     }
 
     .wx-top-guide {
@@ -431,8 +419,17 @@ p {margin-bottom: 12px}
     }
 }
 
-@media (max-width: 360px) {
-    .wx-actions {
-        flex-direction: column;
+@media (max-width: 420px) {
+    .wx-card {
+        max-width: none;
+        padding: 24px 22px;
+    }
+
+    .wx-card-head h2 {
+        font-size: 22px;
+    }
+
+    .wx-step {
+        font-size: 15px;
     }
 }

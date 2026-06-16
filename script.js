@@ -16,14 +16,11 @@ document.addEventListener("DOMContentLoaded", function () {
     var ua = navigator.userAgent.toLowerCase();
 
     var isWeChat = ua.indexOf("micromessenger") !== -1;
-    var isMobile = /iphone|ipad|ipod|android|mobile/.test(ua);
 
     if (isWeChat) {
         var mask = document.getElementById("wx-mask");
         if (mask) {
             mask.style.display = "flex";
-            mask.classList.toggle("wx-mobile", isMobile);
-            mask.classList.toggle("wx-desktop", !isMobile);
         }
     }
 });
