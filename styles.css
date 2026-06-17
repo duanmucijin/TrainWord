@@ -56,7 +56,7 @@ p { margin-bottom: 12px; }
 .hero-text h1 { font-size: 56px; line-height: 1.15; letter-spacing: -1.5px; margin-bottom: 24px; font-weight: 900; }
 .blue-text { color: var(--brand-blue); }
 
-/* 词库标签“线路图” - 重构流式响应式布局 */
+/* 词库标签“线路图” - 流式响应式布局 */
 .vocab-network { 
     margin-bottom: 40px; 
     display: flex; 
@@ -84,7 +84,7 @@ p { margin-bottom: 12px; }
 .t-purple { color: var(--duo-purple); }
 .v-line-connect { font-size: 13px; color: #999; font-weight: 800; letter-spacing: 1px; padding-left: 5px; }
 
-/* 按钮：Duolingo 质感，微动效升级 */
+/* 按钮：Duolingo 质感升级 */
 .btn-express {
     display: inline-block; 
     padding: 20px 40px; 
@@ -100,25 +100,39 @@ p { margin-bottom: 12px; }
 .btn-express:hover { background-color: var(--brand-blue-hover); transform: translateY(-2px); box-shadow: 0 8px 0 var(--brand-blue-shadow); }
 .btn-express:active { transform: translateY(4px); box-shadow: 0 2px 0 var(--brand-blue-shadow); }
 
-/* 手机模型弹性适配 */
-.hero-mockup { flex: 0.8; display: flex; justify-content: center; }
+/* 【重点修复】手机模型自适应（解决压扁与跳脱问题） */
+.hero-mockup { 
+    flex: 0.8; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
 .phone-case { 
     width: 100%;
-    max-width: 300px; 
-    aspect-ratio: 9 / 18.3;
-    border: 10px solid #121212; 
-    border-radius: 44px; 
-    overflow: hidden; 
+    max-width: 290px; /* 控制桌面端标准大小 */
     background: #000;
-    box-shadow: 0 40px 80px rgba(0,0,0,0.12);
+    border: 11px solid #121212; 
+    border-radius: 42px; 
+    box-shadow: 0 40px 80px rgba(0,0,0,0.15);
+    overflow: hidden;
+    line-height: 0;   /* 移除图片底部的幽灵白边 */
 }
-.full-shot { width: 100%; height: 100%; object-fit: cover; display: block; }
+.full-shot { 
+    width: 100%; 
+    height: auto;      /* 依靠图片本身高度撑开，决不强行扭曲比例 */
+    display: block;
+    object-fit: contain; 
+}
 
-/* 滚动条 */
-.rolling-bar { background: #1a1a1a; padding: 15px 0; overflow: hidden; }
-.rolling-inner { display: flex; width: max-content; animation: move 30s linear infinite; }
-.rolling-inner span { color: #fff; font-size: 14px; font-weight: 900; letter-spacing: 2px; padding: 0 40px; }
-@keyframes move { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+/* 黑色滚动条（通用） */
+.rolling-bar, .town-rolling-bar { background: #1a1a1a; padding: 15px 0; overflow: hidden; }
+.rolling-inner, .town-rolling-inner { display: flex; width: max-content; animation: move 30s linear infinite; }
+.rolling-inner span, .town-rolling-inner span { color: #fff; font-size: 14px; font-weight: 900; letter-spacing: 2px; padding: 0 40px; }
+
+@keyframes move { 
+    from { transform: translateX(0); } 
+    to { transform: translateX(-50%); } 
+}
 
 /* 核心玩法四重奏 */
 .gameplay-flow { padding: 100px 50px; max-width: 1300px; margin: 0 auto; }
@@ -144,6 +158,36 @@ p { margin-bottom: 12px; }
 .shot-desc h3 { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
 .shot-desc p { font-size: 14px; color: #667085; line-height: 1.6; }
 
+
+/* 【新增板块】中间蓝色、反向滚动的微倾斜过渡条 */
+.mid-rolling-bar { 
+    background: var(--brand-blue); 
+    padding: 14px 0; 
+    overflow: hidden; 
+    transform: rotate(-1deg); /* 潮牌杂志感微倾斜 */
+    margin: 50px 0;
+    box-shadow: 0 8px 24px rgba(0, 122, 255, 0.15);
+}
+.mid-rolling-inner { 
+    display: flex; 
+    width: max-content; 
+    animation: move-reverse 28s linear infinite; /* 与黑色错开，形成对冲视觉特效 */
+}
+.mid-rolling-inner span { 
+    color: #fff; 
+    font-size: 14px; 
+    font-weight: 900; 
+    letter-spacing: 2px; 
+    padding: 0 45px; 
+    text-transform: uppercase;
+}
+
+@keyframes move-reverse { 
+    from { transform: translateX(-50%); } 
+    to { transform: translateX(0); } 
+}
+
+
 /* 车站小镇特色区 */
 .town-feature {
     max-width: 1300px;
@@ -161,16 +205,12 @@ p { margin-bottom: 12px; }
 .town-detail-list h3 { font-size: 18px; font-weight: 800; margin-bottom: 6px; color: #1a1a1a; }
 .town-detail-list p { font-size: 14px; line-height: 1.6; margin-bottom: 0; }
 
-/* 小镇图片区域平滑自适应 */
 .town-showcase { display: grid; grid-template-columns: 180px 1fr; gap: 20px; align-items: center; }
 .town-phone { border: 8px solid #121212; border-radius: 30px; overflow: hidden; background: #000; box-shadow: 0 25px 50px rgba(0,0,0,0.12); }
 .town-phone img { width: 100%; display: block; }
 .town-panorama { display: grid; gap: 16px; }
 .town-panorama img { width: 100%; display: block; border-radius: 16px; border: 1px solid #E8EEF5; box-shadow: 0 15px 35px rgba(0,0,0,0.06); }
 
-.town-rolling-bar { background: #1a1a1a; padding: 15px 0; overflow: hidden; }
-.town-rolling-inner { display: flex; width: max-content; animation: move 26s linear infinite; }
-.town-rolling-inner span { color: #fff; font-size: 14px; font-weight: 900; letter-spacing: 2px; padding: 0 56px; }
 
 /* 底部区域 */
 .site-footer { margin-top: 80px; padding: 60px 40px 40px; background: #F7F9FC; border-top: 1px solid #EEF1F5; border-radius: 40px 40px 0 0; }
@@ -184,7 +224,7 @@ p { margin-bottom: 12px; }
 .footer-links a:hover { color: var(--brand-blue); }
 .footer-bottom { padding-top: 20px; border-top: 1px solid #EAECEF; font-size: 13px; color: #98A2B3; }
 
-/* 微信遮罩层样式保持专业与整洁 */
+/* 微信遮罩层 */
 .wx-mask { display: none; position: fixed; z-index: 9999; inset: 0; background: rgba(12, 16, 24, 0.68); backdrop-filter: blur(2px); justify-content: flex-end; align-items: stretch; padding: 18px 16px max(22px, env(safe-area-inset-bottom)); flex-direction: column; }
 .wx-card { background: #fff; width: 100%; max-width: 520px; margin: 0 auto; border-radius: 20px; padding: 22px; box-shadow: 0 18px 50px rgba(0, 0, 0, 0.22); text-align: left; }
 .wx-top-guide { position: fixed; top: 14px; right: 16px; display: flex; align-items: center; gap: 8px; padding: 8px 11px; border-radius: 999px; background: rgba(255, 255, 255, 0.94); color: #111827; font-size: 12px; font-weight: 700; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18); }
@@ -204,41 +244,12 @@ p { margin-bottom: 12px; }
 .wx-close { display: block; width: 100%; margin-top: 12px; border: 0; background: transparent; font-size: 12px; color: #98A2B3; text-align: center; cursor: pointer; }
 
 
-/* 新增：中间过渡滚动条样式 */
-.mid-rolling-bar { 
-    background: var(--brand-blue); 
-    padding: 14px 0; 
-    overflow: hidden; 
-    transform: rotate(-1deg); /* 微小的倾斜，让页面更有动感和设计师玩具感，不想要可以删掉 */
-    margin: 40px 0;
-    box-shadow: 0 8px 24px rgba(0, 122, 255, 0.15);
-}
-
-.mid-rolling-inner { 
-    display: flex; 
-    width: max-content; 
-    animation: move-reverse 28s linear infinite; /* 采用反向滚动，与上下两条黑色的方向错开，视觉效果更炫 */
-}
-
-.mid-rolling-inner span { 
-    color: #fff; 
-    font-size: 14px; 
-    font-weight: 900; 
-    letter-spacing: 2px; 
-    padding: 0 45px; 
-    text-transform: uppercase;
-}
-
-/* 反向滚动动画 */
-@keyframes move-reverse { 
-    from { transform: translateX(-50%); } 
-    to { transform: translateX(0); } 
-}
-
-/* --- 完美媒体查询响应式重构 --- */
+/* --- 完美移动端响应式断点控制 --- */
 @media (max-width: 1024px) {
     .hero-main { flex-direction: column; text-align: center; gap: 40px; }
     .vocab-network { justify-content: center; }
+    .hero-mockup { width: 100%; }
+    .phone-case { max-width: 260px; margin: 0 auto; } /* 平板上缩减外壳，保持紧凑 */
     .shot-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
     .town-feature { grid-template-columns: 1fr; padding: 40px 30px; gap: 40px; }
     .town-copy { text-align: center; }
@@ -258,7 +269,8 @@ p { margin-bottom: 12px; }
 @media (max-width: 480px) {
     .shot-grid { grid-template-columns: 1fr; }
     .town-showcase { grid-template-columns: 1fr; gap: 20px; }
-    .town-phone { max-width: 180px; margin: 0 auto; }
-    .hero-text h1 { font-size: 32px; }
+    .town-phone { max-width: 170px; margin: 0 auto; } /* 极窄手机屏上确保外壳不拥挤 */
+    .phone-case { max-width: 220px; }                 /* 首屏截图在小手机上安全缩放，绝不拉伸变形 */
+    .hero-text h1 { font-size: 31px; }
     .btn-express { width: 100%; text-align: center; padding: 16px 20px; font-size: 16px; }
 }
