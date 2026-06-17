@@ -2,16 +2,19 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>火车单词 — 每一站，皆进步</title>
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<script src= "script.js"></script>
+
 <nav class="navbar">
-    <img src="assets/logo.png" class="nav-logo">
-    <h2>TrainWord</h2>
+    <div class="nav-brand">
+        <img src="assets/logo.png" class="nav-logo" alt="TrainWord Logo">
+        <h2>TrainWord</h2>
+    </div>
     <div class="nav-links">
         <a href="https://apps.apple.com/cn/app/%E7%81%AB%E8%BD%A6%E5%8D%95%E8%AF%8D/id6762613193" class="nav-btn-main">立即发车</a>
     </div>
@@ -20,41 +23,34 @@
 <header class="hero">
     <div class="hero-main">
         <div class="hero-text">
-            <h1>把背单词，变成<br><span class="blue-text">一列正在运行的火车</span></h1>
+           <h1>把碎片时间，<br><span class="blue-text">编织进永不停歇的记忆轨道</span></h1>
             <p>基于记忆科学（艾宾浩斯遗忘曲线）与主动回忆机制，把碎片时间，变成可持续增长的记忆系统。答题、装载、发车、复习，再把学习奖励建成自己的车站小镇。</p>
             
+            <!-- 优化后的流式线路网 -->
             <div class="vocab-network">
-                <div class="v-line">
-                    <span class="v-tag t-blue">CET4</span>
-                    <span class="v-tag t-green">CET6</span>
-                    <span class="v-tag t-yellow">考研</span>
-                    <span class="v-tag t-purple">IELTS</span>
-                </div>
-                 <div class="v-line" style="margin-left: 20px;">
-                    <span class="v-tag t-red">TOEFL</span>
-                    <span class="v-tag t-blue">SAT</span>
-                    <span class="v-tag t-orange">GRE/GMAT</span>
-                    <span class="v-tag t-green">高考词汇</span>
-                </div>
-                <div class="v-line" style="margin-left: 20px;">
-                    <span class="v-tag t-orange">小学</span>
-                    <span class="v-tag t-green">中学</span>
-                    <span class="v-tag t-yellow">高中</span>
-                    <span class="v-tag t-red">BEC商务英语</span>
-                </div>
-                <div class="v-line">
-                    <span class="v-tag t-blue">专四</span>
-                    <span class="v-tag t-red">专八</span>
-                    <span class="v-line-connect">全量覆盖</span>
-                </div>
+                <span class="v-tag t-blue">CET4</span>
+                <span class="v-tag t-green">CET6</span>
+                <span class="v-tag t-yellow">考研</span>
+                <span class="v-tag t-purple">IELTS</span>
+                <span class="v-tag t-red">TOEFL</span>
+                <span class="v-tag t-blue">SAT</span>
+                <span class="v-tag t-orange">GRE/GMAT</span>
+                <span class="v-tag t-green">高考词汇</span>
+                <span class="v-tag t-orange">小学</span>
+                <span class="v-tag t-green">中学</span>
+                <span class="v-tag t-yellow">高中</span>
+                <span class="v-tag t-red">BEC商务英语</span>
+                <span class="v-tag t-blue">专四</span>
+                <span class="v-tag t-red">专八</span>
+                <span class="v-line-connect">全量覆盖</span>
             </div>
 
-            <a href="https://apps.apple.com/cn/app/%E7%81%AB%E8%BD%A6%E5%8D%95%E8%AF%8D/id6762613193" class="btn-express"> 立即下载（App Store）</a>
+            <a href="https://apps.apple.com/cn/app/%E7%81%AB%E8%BD%A6%E5%8D%95%E8%AF%8D/id6762613193" class="btn-express">立即下载（App Store）</a>
         </div>
 
         <div class="hero-mockup">
             <div class="phone-case">
-                <img src="assets/heroz.jpg" class="full-shot">
+                <img src="assets/heroz.jpg" class="full-shot" alt="App界面截屏">
             </div>
         </div>
     </div>
@@ -66,13 +62,12 @@
     </div>
 </div>
 
-
 <section class="gameplay-flow">
     <h2 class="section-title">玩中学的四重奏</h2>
     
     <div class="shot-grid">
         <div class="shot-card">
-            <div class="shot-frame"><img src="assets/page3.jpg"></div>
+            <div class="shot-frame"><img src="assets/page3.jpg" alt="看词择意"></div>
             <div class="shot-desc">
                 <div class="badge">01 进站装载</div>
                 <h3>看词择意</h3>
@@ -81,7 +76,7 @@
         </div>
 
         <div class="shot-card">
-            <div class="shot-frame"><img src="assets/page4.jpg"></div>
+            <div class="shot-frame"><img src="assets/page4.jpg" alt="拼写测试"></div>
             <div class="shot-desc">
                 <div class="badge">02 鸣笛发车</div>
                 <h3>拼写测试</h3>
@@ -90,7 +85,7 @@
         </div>
 
         <div class="shot-card">
-            <div class="shot-frame"><img src="assets/page8.jpg"></div>
+            <div class="shot-frame"><img src="assets/page8.jpg" alt="海量火车研发"></div>
             <div class="shot-desc">
                 <div class="badge">03 核心研发</div>
                 <h3>海量火车研发</h3>
@@ -99,7 +94,7 @@
         </div>
 
         <div class="shot-card">
-            <div class="shot-frame"><img src="assets/page6.jpg"></div>
+            <div class="shot-frame"><img src="assets/page6.jpg" alt="系统化词库"></div>
             <div class="shot-desc">
                 <div class="badge">04 知识图谱</div>
                 <h3>系统化词库</h3>
@@ -108,6 +103,12 @@
         </div>
     </div>
 </section>
+
+<div class="mid-rolling-bar">
+    <div class="mid-rolling-inner">
+        <span>GAMIFIED LEARNING</span><span>告别死记硬背</span><span>ComboX10!</span><span>爽感拉满</span><span>筑路成镇</span><span>SANDBOX SIMULATION</span><span>GAMIFIED LEARNING</span><span>告别死记硬背</span>
+    </div>
+</div>
 
 <section class="town-feature">
     <div class="town-copy">
@@ -183,11 +184,8 @@
     </div>
 </div>
 
-</body>
-
 <footer class="site-footer">
     <div class="footer-inner">
-
         <div class="footer-brand">
             <img src="assets/logo.png" alt="logo">
             <div>
@@ -195,17 +193,18 @@
                 <p>每一站，皆进步。</p>
             </div>
         </div>
-
         <div class="footer-links">
             <a href="/support">技术支持</a>
             <a href="/privacy">隐私政策</a>
             <a href="mailto:duanmucijin@163.com">联系我们</a>
             <a href="https://apps.apple.com/cn/app/%E7%81%AB%E8%BD%A6%E5%8D%95%E8%AF%8D/id6762613193">下载体验</a>
         </div>
-
         <div class="footer-bottom">
             © 2026 TrainWord
         </div>
     </div>
 </footer>
+
+<script src="script.js"></script>
+</body>
 </html>
