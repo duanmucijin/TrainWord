@@ -1,6 +1,6 @@
 const ACCOUNT_API_ORIGIN = "https://xuanheng-bazi.duanmucijin504.chatgpt.site";
 
-export default async function onRequest({ request }) {
+export default async function onRequest({ request, env }) {
   const incomingUrl = new URL(request.url);
   const upstreamUrl = new URL(
     `${incomingUrl.pathname}${incomingUrl.search}`,
@@ -11,6 +11,12 @@ export default async function onRequest({ request }) {
   headers.delete("content-length");
   headers.set("X-Forwarded-Host", incomingUrl.host);
   headers.set("X-Forwarded-Proto", incomingUrl.protocol.replace(":", ""));
+  if (env?.ACCOUNT_API_BYPASS_TOKEN) {
+    headers.set(
+      "OAI-Sites-Authorization",
+      `Bearer ${env.ACCOUNT_API_BYPASS_TOKEN}`,
+    );
+  }
 
   const init = {
     method: request.method,
