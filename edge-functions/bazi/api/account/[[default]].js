@@ -1,4 +1,4 @@
-const ACCOUNT_API_ORIGIN = "https://xuanheng-bazi.duanmucijin504.chatgpt.site";
+const ACCOUNT_API_ORIGIN = "https://bazi-api.trainword.com";
 
 export default async function onRequest({ request, env }) {
   const incomingUrl = new URL(request.url);
