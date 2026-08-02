@@ -1,6 +1,7 @@
-const ACCOUNT_API_ORIGIN = "https://bazi-api.trainword.com";
+const ACCOUNT_API_ORIGIN =
+  "https://xuanheng-bazi-d5gr07h3m2afa3edd-1318965414.ap-shanghai.app.tcloudbase.com";
 
-export default async function onRequest({ request, env }) {
+export default async function onRequest({ request }) {
   const incomingUrl = new URL(request.url);
   const upstreamUrl = new URL(
     `${incomingUrl.pathname}${incomingUrl.search}`,
@@ -11,12 +12,6 @@ export default async function onRequest({ request, env }) {
   headers.delete("content-length");
   headers.set("X-Forwarded-Host", incomingUrl.host);
   headers.set("X-Forwarded-Proto", incomingUrl.protocol.replace(":", ""));
-  if (env?.ACCOUNT_API_BYPASS_TOKEN) {
-    headers.set(
-      "OAI-Sites-Authorization",
-      `Bearer ${env.ACCOUNT_API_BYPASS_TOKEN}`,
-    );
-  }
 
   const init = {
     method: request.method,

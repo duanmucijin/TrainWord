@@ -1,3 +1,3 @@
 :HL["/bazi/_next/static/chunks/13w.wgvtz3n.s.css","style"]
 :HL["/bazi/_next/static/media/AlimamaShuHeiTi_Bold-s.p.00-mq338mdt.v.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"ZRoYNK0F_t46U4Hu9LqiR"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"r5gornswfn8BDWPD0qx7E"}
