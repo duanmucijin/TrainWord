@@ -1,3 +1,3 @@
-:HL["/bazi/_next/static/chunks/08cz5bilaz6le.css","style"]
+:HL["/bazi/_next/static/chunks/00g3g1dmgvrg2.css","style"]
 :HL["/bazi/_next/static/media/AlimamaShuHeiTi_Bold-s.p.00-mq338mdt.v.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"X6AX14BV6CM3UWdAh9Vbt"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"VwACcr6Rvkm10byITcxfQ"}
