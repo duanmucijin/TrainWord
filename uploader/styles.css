@@ -102,6 +102,12 @@ h2 {
   white-space: nowrap;
 }
 
+.status-stack {
+  display: grid;
+  justify-items: end;
+  gap: 8px;
+}
+
 .status.ok {
   color: #0d3a23;
   background: var(--accent);
@@ -110,6 +116,89 @@ h2 {
 .status.error {
   color: #3c1010;
   background: var(--danger);
+}
+
+.account-button {
+  min-height: 34px;
+  max-width: 148px;
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #171922;
+  color: var(--text);
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.account-panel {
+  margin: 0 0 18px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #181b23;
+}
+
+.account-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  padding: 4px;
+  border-radius: var(--radius);
+  background: #11131a;
+}
+
+.account-tabs button {
+  height: 36px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.account-tabs button.active {
+  background: var(--surface-strong);
+  color: var(--text);
+}
+
+.account-actions {
+  display: grid;
+  grid-template-columns: 1fr 90px;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.account-message {
+  min-height: 20px;
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.account-message.ok {
+  color: #8df0ba;
+}
+
+.account-message.error {
+  color: #ff9b9b;
+}
+
+.api-settings {
+  margin: 0 0 18px;
+}
+
+.api-settings summary {
+  width: fit-content;
+  cursor: pointer;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.api-settings .api-row {
+  margin-top: 8px;
 }
 
 .field-label {
@@ -362,5 +451,13 @@ h2 {
 
   .input-panel {
     position: static;
+  }
+
+  .topline {
+    align-items: start;
+  }
+
+  .status-stack {
+    min-width: 96px;
   }
 }

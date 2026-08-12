@@ -16,16 +16,37 @@
               <p class="eyebrow">Uploader</p>
               <h1>素材提取</h1>
             </div>
-            <div class="status" id="statusPill">未连接</div>
+            <div class="status-stack">
+              <div class="status" id="statusPill">未连接</div>
+              <button id="accountToggleButton" class="account-button" type="button">检查账号</button>
+            </div>
           </div>
 
-          <label class="field-label" for="apiBaseInput">接口地址</label>
-          <div class="api-row">
-            <input id="apiBaseInput" class="input" autocomplete="off" spellcheck="false">
-            <button id="saveApiButton" class="icon-button" type="button" title="保存接口地址" aria-label="保存接口地址">
-              <span>保存</span>
-            </button>
-          </div>
+          <section class="account-panel hidden" id="accountPanel" aria-label="账号登录">
+            <div class="account-tabs" role="tablist" aria-label="账号操作">
+              <button id="loginTabButton" class="active" type="button" aria-pressed="true">登录</button>
+              <button id="registerTabButton" type="button" aria-pressed="false">注册</button>
+            </div>
+            <label class="field-label" for="usernameInput">用户名</label>
+            <input id="usernameInput" class="input" autocomplete="username">
+            <label class="field-label" for="passwordInput">密码</label>
+            <input id="passwordInput" class="input" type="password" autocomplete="current-password">
+            <div class="account-actions">
+              <button id="submitAccountButton" class="primary-button" type="button">登录</button>
+              <button id="logoutButton" class="secondary-button hidden" type="button">退出</button>
+            </div>
+            <p id="accountMessage" class="account-message" role="status"></p>
+          </section>
+
+          <details class="api-settings">
+            <summary>接口地址</summary>
+            <div class="api-row">
+              <input id="apiBaseInput" class="input" autocomplete="off" spellcheck="false">
+              <button id="saveApiButton" class="icon-button" type="button" title="保存接口地址" aria-label="保存接口地址">
+                <span>保存</span>
+              </button>
+            </div>
+          </details>
 
           <label class="field-label" for="shareInput">分享内容</label>
           <textarea id="shareInput" class="textarea" spellcheck="false" placeholder="粘贴平台分享文案或链接"></textarea>

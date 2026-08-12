@@ -10,9 +10,31 @@ const API_STORAGE_KEY = "uploader.extractor.apiBase";
 const DEVICE_ID_KEY = "uploader.visitor.deviceId";
 const TOKEN_KEY = "uploader.visitor.token";
 
+const accountMessages = {
+  invalid_username: "用户名需为 3 至 20 位中文、字母、数字或下划线。",
+  weak_password: "密码需为 8 至 72 位，并同时包含字母和数字。",
+  username_taken: "这个用户名已经被使用，请换一个。",
+  invalid_credentials: "用户名或密码不正确。",
+  login_locked: "尝试次数过多，请 15 分钟后再试。",
+  rate_limited: "当前网络请求过多，请稍后再试。",
+  unauthenticated: "登录状态已失效，请重新登录。",
+  account_upstream_unavailable: "账号服务暂时不可用。",
+  origin_forbidden: "当前网站地址未获账号服务授权。",
+  request_failed: "账号服务暂时不可用。",
+};
+
 const elements = {
   apiBaseInput: document.querySelector("#apiBaseInput"),
   saveApiButton: document.querySelector("#saveApiButton"),
+  accountToggleButton: document.querySelector("#accountToggleButton"),
+  accountPanel: document.querySelector("#accountPanel"),
+  loginTabButton: document.querySelector("#loginTabButton"),
+  registerTabButton: document.querySelector("#registerTabButton"),
+  usernameInput: document.querySelector("#usernameInput"),
+  passwordInput: document.querySelector("#passwordInput"),
+  submitAccountButton: document.querySelector("#submitAccountButton"),
+  logoutButton: document.querySelector("#logoutButton"),
+  accountMessage: document.querySelector("#accountMessage"),
   shareInput: document.querySelector("#shareInput"),
   extractButton: document.querySelector("#extractButton"),
   extractButtonText: document.querySelector("#extractButtonText"),
@@ -30,6 +52,8 @@ const elements = {
 };
 
 let lastText = "";
+let accountMode = "login";
+let currentAccount = null;
 
 function normalizeApiBase(value) {
   return (value || defaultApiBase()).trim().replace(/\/+$/, "");
@@ -74,6 +98,113 @@ async function apiFetch(path, options = {}) {
     throw new Error(payload.message || `HTTP ${response.status}`);
   }
   return payload;
+}
+
+async function accountFetch(path, options = {}) {
+  const response = await fetch(`/uploader/api/account/${path}`, {
+    ...options,
+    credentials: "include",
+    headers: {
+      ...(options.body ? { "Content-Type": "application/json" } : {}),
+      ...(options.headers || {}),
+    },
+  });
+  const payload = await response.json().catch(() => ({}));
+  if (!response.ok) {
+    const error = payload.error || {};
+    const message =
+      accountMessages[error.code] ||
+      error.message ||
+      payload.message ||
+      `HTTP ${response.status}`;
+    const thrown = new Error(message);
+    thrown.code = error.code || "request_failed";
+    throw thrown;
+  }
+  return payload;
+}
+
+function setAccountMessage(message = "", mode = "") {
+  elements.accountMessage.textContent = message;
+  elements.accountMessage.className = `account-message ${mode}`.trim();
+}
+
+function setAccountPanel(open) {
+  elements.accountPanel.classList.toggle("hidden", !open);
+}
+
+function setAccountMode(mode) {
+  accountMode = mode;
+  const isLogin = mode === "login";
+  elements.loginTabButton.classList.toggle("active", isLogin);
+  elements.registerTabButton.classList.toggle("active", !isLogin);
+  elements.loginTabButton.setAttribute("aria-pressed", String(isLogin));
+  elements.registerTabButton.setAttribute("aria-pressed", String(!isLogin));
+  elements.submitAccountButton.textContent = isLogin ? "登录" : "注册";
+  elements.passwordInput.autocomplete = isLogin ? "current-password" : "new-password";
+  setAccountMessage("");
+}
+
+function renderAccount(account) {
+  currentAccount = account;
+  if (account) {
+    elements.accountToggleButton.textContent = account.displayName || account.username;
+    elements.logoutButton.classList.remove("hidden");
+    elements.submitAccountButton.classList.add("hidden");
+    setAccountMessage("已登录账号。", "ok");
+    return;
+  }
+  elements.accountToggleButton.textContent = "登录账号";
+  elements.logoutButton.classList.add("hidden");
+  elements.submitAccountButton.classList.remove("hidden");
+}
+
+async function loadAccountSession() {
+  try {
+    const payload = await accountFetch("session");
+    renderAccount(payload.account);
+  } catch (error) {
+    if (error.code !== "unauthenticated") {
+      setAccountMessage(error.message || "账号服务暂时不可用。", "error");
+    }
+    renderAccount(null);
+  }
+}
+
+async function submitAccount() {
+  const username = elements.usernameInput.value.trim();
+  const password = elements.passwordInput.value;
+  if (!username || !password) {
+    setAccountMessage("请输入用户名和密码。", "error");
+    return;
+  }
+  elements.submitAccountButton.disabled = true;
+  setAccountMessage(accountMode === "login" ? "登录中" : "注册中");
+  try {
+    const payload = await accountFetch(accountMode, {
+      method: "POST",
+      body: JSON.stringify({ username, password }),
+    });
+    renderAccount(payload.account);
+    elements.passwordInput.value = "";
+  } catch (error) {
+    setAccountMessage(error.message || "账号服务暂时不可用。", "error");
+  } finally {
+    elements.submitAccountButton.disabled = false;
+  }
+}
+
+async function logoutAccount() {
+  elements.logoutButton.disabled = true;
+  try {
+    await accountFetch("logout", { method: "POST" });
+    renderAccount(null);
+    setAccountMessage("已退出登录。");
+  } catch (error) {
+    setAccountMessage(error.message || "退出失败。", "error");
+  } finally {
+    elements.logoutButton.disabled = false;
+  }
 }
 
 async function ensureToken() {
@@ -259,6 +390,13 @@ async function extract() {
 }
 
 elements.apiBaseInput.value = getApiBase();
+elements.accountToggleButton.addEventListener("click", () => {
+  setAccountPanel(elements.accountPanel.classList.contains("hidden"));
+});
+elements.loginTabButton.addEventListener("click", () => setAccountMode("login"));
+elements.registerTabButton.addEventListener("click", () => setAccountMode("register"));
+elements.submitAccountButton.addEventListener("click", submitAccount);
+elements.logoutButton.addEventListener("click", logoutAccount);
 elements.saveApiButton.addEventListener("click", () => {
   localStorage.setItem(API_STORAGE_KEY, normalizeApiBase(elements.apiBaseInput.value));
   localStorage.removeItem(TOKEN_KEY);
@@ -274,4 +412,6 @@ elements.copyTextButton.addEventListener("click", async () => {
   await navigator.clipboard.writeText(lastText);
 });
 
+setAccountMode("login");
+loadAccountSession();
 checkHealth();
