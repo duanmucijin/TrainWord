@@ -91,31 +91,10 @@ h2 {
   font-size: 22px;
 }
 
-.status {
-  min-width: 72px;
-  padding: 7px 10px;
-  border-radius: var(--radius);
-  background: var(--surface-strong);
-  color: var(--muted);
-  text-align: center;
-  font-size: 13px;
-  white-space: nowrap;
-}
-
 .status-stack {
   display: grid;
   justify-items: end;
   gap: 8px;
-}
-
-.status.ok {
-  color: #0d3a23;
-  background: var(--accent);
-}
-
-.status.error {
-  color: #3c1010;
-  background: var(--danger);
 }
 
 .account-button {
@@ -199,6 +178,20 @@ h2 {
 
 .api-settings .api-row {
   margin-top: 8px;
+}
+
+.debug-status {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.debug-status.ok {
+  color: #8df0ba;
+}
+
+.debug-status.error {
+  color: #ff9b9b;
 }
 
 .field-label {

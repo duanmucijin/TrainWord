@@ -24,6 +24,7 @@ const accountMessages = {
 };
 
 const elements = {
+  apiSettings: document.querySelector("#apiSettings"),
   apiBaseInput: document.querySelector("#apiBaseInput"),
   saveApiButton: document.querySelector("#saveApiButton"),
   accountToggleButton: document.querySelector("#accountToggleButton"),
@@ -64,8 +65,9 @@ function getApiBase() {
 }
 
 function setStatus(label, mode = "") {
+  if (!isDebugMode()) return;
   elements.statusPill.textContent = label;
-  elements.statusPill.className = `status ${mode}`.trim();
+  elements.statusPill.className = `debug-status ${mode}`.trim();
 }
 
 function setBusy(isBusy) {
@@ -227,12 +229,26 @@ async function ensureToken() {
 }
 
 async function checkHealth() {
+  if (!isDebugMode()) return;
   try {
     const payload = await apiFetch("/health");
     setStatus(payload.ok ? "已连接" : "异常", payload.ok ? "ok" : "error");
   } catch {
     setStatus("未连接", "error");
   }
+}
+
+function isDebugMode() {
+  return new URLSearchParams(location.search).get("debug") === "1";
+}
+
+function showInlineError(message) {
+  elements.emptyState.classList.add("hidden");
+  elements.resultContent.classList.remove("hidden");
+  elements.platformName.textContent = "提示";
+  elements.resultTitle.textContent = "需要补充内容";
+  elements.textOutput.textContent = message;
+  elements.mediaGrid.innerHTML = "";
 }
 
 function clearResults() {
@@ -320,8 +336,8 @@ function renderMedia(payload) {
       formats.forEach((format) => {
         const quality = format.quality_note || format.quality || "默认";
         if (format.separate) {
-          appendDownloadLink(list, format.video_url, `${quality} 视频轨`, format.video_ext || "video");
-          appendDownloadLink(list, format.audio_url, `${quality} 音频轨`, format.audio_ext || "audio");
+          appendDownloadLink(list, format.video_url, `${quality} 高清画面`, format.video_ext || "video");
+          appendDownloadLink(list, format.audio_url, `${quality} 配套声音`, format.audio_ext || "audio");
         } else {
           appendDownloadLink(list, format.video_url || format.audio_url, quality, format.video_ext || format.audio_ext || "media");
         }
@@ -355,7 +371,7 @@ function renderPayload(payload) {
 async function extract() {
   const content = elements.shareInput.value.trim();
   if (!content) {
-    setStatus("待输入", "error");
+    showInlineError("先粘贴分享文案或链接");
     elements.shareInput.focus();
     return;
   }
@@ -389,7 +405,10 @@ async function extract() {
   }
 }
 
-elements.apiBaseInput.value = getApiBase();
+if (isDebugMode()) {
+  elements.apiSettings.classList.remove("hidden");
+  elements.apiBaseInput.value = getApiBase();
+}
 elements.accountToggleButton.addEventListener("click", () => {
   setAccountPanel(elements.accountPanel.classList.contains("hidden"));
 });
@@ -398,6 +417,7 @@ elements.registerTabButton.addEventListener("click", () => setAccountMode("regis
 elements.submitAccountButton.addEventListener("click", submitAccount);
 elements.logoutButton.addEventListener("click", logoutAccount);
 elements.saveApiButton.addEventListener("click", () => {
+  if (!isDebugMode()) return;
   localStorage.setItem(API_STORAGE_KEY, normalizeApiBase(elements.apiBaseInput.value));
   localStorage.removeItem(TOKEN_KEY);
   checkHealth();

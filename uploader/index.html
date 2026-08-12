@@ -17,7 +17,6 @@
               <h1>素材提取</h1>
             </div>
             <div class="status-stack">
-              <div class="status" id="statusPill">未连接</div>
               <button id="accountToggleButton" class="account-button" type="button">检查账号</button>
             </div>
           </div>
@@ -38,14 +37,15 @@
             <p id="accountMessage" class="account-message" role="status"></p>
           </section>
 
-          <details class="api-settings">
-            <summary>接口地址</summary>
+          <details class="api-settings hidden" id="apiSettings">
+            <summary>开发调试</summary>
             <div class="api-row">
               <input id="apiBaseInput" class="input" autocomplete="off" spellcheck="false">
-              <button id="saveApiButton" class="icon-button" type="button" title="保存接口地址" aria-label="保存接口地址">
-                <span>保存</span>
+              <button id="saveApiButton" class="icon-button" type="button" title="应用调试配置" aria-label="应用调试配置">
+                <span>应用</span>
               </button>
             </div>
+            <p class="debug-status" id="statusPill">服务检测中</p>
           </details>
 
           <label class="field-label" for="shareInput">分享内容</label>
