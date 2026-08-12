@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark light">
+    <title>Uploader 提取器</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <section class="workspace">
+        <div class="panel input-panel">
+          <div class="topline">
+            <div>
+              <p class="eyebrow">Uploader</p>
+              <h1>素材提取</h1>
+            </div>
+            <div class="status" id="statusPill">未连接</div>
+          </div>
+
+          <label class="field-label" for="apiBaseInput">接口地址</label>
+          <div class="api-row">
+            <input id="apiBaseInput" class="input" autocomplete="off" spellcheck="false">
+            <button id="saveApiButton" class="icon-button" type="button" title="保存接口地址" aria-label="保存接口地址">
+              <span>保存</span>
+            </button>
+          </div>
+
+          <label class="field-label" for="shareInput">分享内容</label>
+          <textarea id="shareInput" class="textarea" spellcheck="false" placeholder="粘贴平台分享文案或链接"></textarea>
+
+          <div class="actions">
+            <button id="extractButton" class="primary-button" type="button">
+              <span id="extractButtonText">开始提取</span>
+            </button>
+            <button id="clearButton" class="secondary-button" type="button">清空</button>
+          </div>
+
+          <div class="progress" id="progressBar" aria-hidden="true">
+            <div class="progress-inner"></div>
+          </div>
+        </div>
+
+        <section class="panel result-panel" id="resultPanel">
+          <div class="empty-state" id="emptyState">
+            <div class="empty-mark"></div>
+            <p>等待提取结果</p>
+          </div>
+          <div class="result-content hidden" id="resultContent">
+            <div class="result-head">
+              <div>
+                <p class="eyebrow" id="platformName">平台</p>
+                <h2 id="resultTitle">提取结果</h2>
+              </div>
+              <button id="copyTextButton" class="secondary-button small" type="button">复制文案</button>
+            </div>
+            <pre id="textOutput" class="text-output"></pre>
+            <div id="mediaGrid" class="media-grid"></div>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <template id="mediaTemplate">
+      <article class="media-item">
+        <div class="preview"></div>
+        <div class="media-body">
+          <div class="media-meta">
+            <strong class="media-type"></strong>
+            <span class="format-count"></span>
+          </div>
+          <div class="format-list"></div>
+        </div>
+      </article>
+    </template>
+
+    <script src="./app.js" type="module"></script>
+  </body>
+</html>
