@@ -26,6 +26,23 @@ body {
   color: var(--text);
 }
 
+.site-footer {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  padding: 22px 0 8px;
+  font-size: 13px;
+}
+
+.site-footer a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: var(--text);
+}
+
 button,
 input,
 textarea {
