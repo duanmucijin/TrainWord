@@ -3,26 +3,35 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="color-scheme" content="dark light">
+    <meta name="color-scheme" content="light">
     <title>技术支持 - 大神去水印</title>
     <style>
-      :root { color-scheme: dark; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; }
+      :root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; }
       * { box-sizing: border-box; }
-      body { margin: 0; background: #1f1e2d; color: #f7f6fb; line-height: 1.7; }
-      main { width: min(720px, calc(100% - 32px)); margin: 0 auto; padding: 48px 0 72px; }
-      h1 { margin: 0 0 8px; font-size: 34px; letter-spacing: 0; }
-      h2 { margin-top: 30px; font-size: 21px; letter-spacing: 0; }
-      p, li { color: #cbc8d5; }
-      a { color: #5de39a; }
+      body { margin: 0; background: #f6f9f8; color: #0e1312; line-height: 1.7; }
+      body::before { content: ""; position: fixed; inset: 0 0 auto; height: 220px; z-index: -1; background: linear-gradient(180deg, #d6f7ee 0%, rgba(214, 247, 238, 0) 100%); }
+      main { width: min(720px, calc(100% - 36px)); margin: 0 auto; padding: 58px 0 80px; }
+      header { padding-bottom: 28px; border-bottom: 1px solid #dfe9e6; }
+      h1 { margin: 0 0 9px; font-size: clamp(30px, 7vw, 40px); line-height: 1.2; letter-spacing: 0; }
+      h2 { margin: 32px 0 10px; font-size: 20px; line-height: 1.35; letter-spacing: 0; }
+      p, li { color: #63706e; }
+      ul { margin: 10px 0; padding-left: 22px; }
+      li + li { margin-top: 8px; }
+      a { color: #0c9f7f; font-weight: 600; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+      .contact { display: block; margin-top: 12px; padding: 17px 18px; color: #08765f; background: #e7f8f3; border: 1px solid #caeee4; border-radius: 8px; font-size: 18px; text-decoration: none; }
+      .footer-link { display: inline-block; margin-top: 32px; }
+      @media (max-width: 520px) { main { padding-top: 40px; } }
     </style>
   </head>
   <body>
     <main>
-      <h1>大神去水印技术支持</h1>
-      <p>遇到提取、下载、编辑、保存、账号或订阅问题，请联系我们。</p>
+      <header>
+        <h1>大神去水印技术支持</h1>
+        <p>遇到内容处理、编辑、保存、账号或订阅问题，请联系我们。</p>
+      </header>
 
       <h2>联系邮箱</h2>
-      <p><a href="mailto:duanmucijin@163.com">duanmucijin@163.com</a></p>
+      <a class="contact" href="mailto:jyinaune@163.com">jyinaune@163.com</a>
 
       <h2>反馈时建议提供</h2>
       <ul>
@@ -34,7 +43,7 @@
       <h2>账号与订阅</h2>
       <p>登录后可在“我的”页面注销账号。自动续费的取消、退款和购买记录由 Apple 管理，可在系统订阅设置或 Apple 支持页面处理。</p>
 
-      <p><a href="/uploader/privacy/">隐私政策</a> · <a href="/uploader/">返回网页版</a></p>
+      <a class="footer-link" href="/uploader/privacy/">查看隐私政策</a>
     </main>
   </body>
 </html>
