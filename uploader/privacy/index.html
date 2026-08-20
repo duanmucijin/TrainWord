@@ -3,21 +3,24 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="color-scheme" content="dark light">
+    <meta name="color-scheme" content="light">
     <title>隐私政策 - 大神去水印</title>
     <style>
-      :root { color-scheme: dark; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; }
+      :root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; }
       * { box-sizing: border-box; }
-      body { margin: 0; background: #1f1e2d; color: #f7f6fb; line-height: 1.75; }
-      main { width: min(760px, calc(100% - 32px)); margin: 0 auto; padding: 48px 0 72px; }
-      header { padding-bottom: 24px; border-bottom: 1px solid #454255; }
-      h1 { margin: 0 0 8px; font-size: 34px; letter-spacing: 0; }
-      h2 { margin: 32px 0 10px; font-size: 21px; letter-spacing: 0; }
-      p, li { color: #cbc8d5; }
-      ul { padding-left: 22px; }
-      a { color: #5de39a; }
-      .meta { margin: 0; color: #9793a5; }
-      .notice { padding: 14px 16px; border-left: 3px solid #ed4ba7; background: #2a283a; }
+      body { margin: 0; background: #f6f9f8; color: #0e1312; line-height: 1.75; }
+      body::before { content: ""; position: fixed; inset: 0 0 auto; height: 220px; z-index: -1; background: linear-gradient(180deg, #d6f7ee 0%, rgba(214, 247, 238, 0) 100%); }
+      main { width: min(760px, calc(100% - 36px)); margin: 0 auto; padding: 58px 0 80px; }
+      header { padding-bottom: 26px; border-bottom: 1px solid #dfe9e6; }
+      h1 { margin: 0 0 8px; font-size: clamp(30px, 7vw, 40px); line-height: 1.2; letter-spacing: 0; }
+      h2 { margin: 34px 0 10px; padding-top: 4px; font-size: 20px; line-height: 1.35; letter-spacing: 0; }
+      p, li { color: #63706e; }
+      ul { margin: 10px 0; padding-left: 22px; }
+      li + li { margin-top: 8px; }
+      a { color: #0c9f7f; font-weight: 600; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+      .meta { margin: 0; color: #74807e; font-size: 14px; }
+      .notice { margin: 24px 0 4px; padding: 15px 17px; color: #315d53; background: #e7f8f3; border: 1px solid #caeee4; border-radius: 8px; }
+      @media (max-width: 520px) { main { padding-top: 40px; } h2 { margin-top: 28px; } }
     </style>
   </head>
   <body>
@@ -45,15 +48,15 @@
       <h2>3. 信息的使用</h2>
       <p>上述信息仅用于提供账号登录、在线媒体处理、本地编辑、文件保存、会员权益、故障排查和安全防护。我们不会出售个人信息，也不会使用这些信息进行跨应用广告追踪。</p>
 
-      <h2>4. 服务提供方与跨境处理</h2>
-      <p>账号和业务接口可能由腾讯云相关服务承载；订阅支付由 Apple StoreKit 处理；部分境外平台链接可能需要由境外服务器或网络服务完成解析。我们仅传输完成相应功能所必需的数据，并要求服务提供方采取合理的安全措施。</p>
+      <h2>4. 服务提供方</h2>
+      <p>账号和业务接口可能由腾讯云相关服务承载；订阅支付由 Apple StoreKit 处理。我们仅传输完成相应功能所必需的数据，并要求服务提供方采取合理的安全措施。</p>
 
       <h2>5. 保存期限与安全</h2>
       <p>账号和权益信息在账号存续期间保存；登录会话、故障日志和临时处理文件仅在功能、安全或排障所需期间保存，临时文件会按服务策略清理。密码不会以明文保存。法律另有要求的，按法定期限处理。</p>
 
       <h2>6. 您的选择与权利</h2>
       <p>您可以在系统设置中关闭相册或通知权限。登录账号后，可在 App 的“我的”页面发起永久注销；注销会删除账号资料、会话和权益关联。Apple 的购买记录由 Apple 管理，注销不会自动退款或取消自动续费，您可在 Apple 订阅设置中处理。</p>
-      <p>如需访问、更正、删除信息或提出隐私问题，请发送邮件至 <a href="mailto:duanmucijin@163.com">duanmucijin@163.com</a>。</p>
+      <p>如需访问、更正、删除信息或提出隐私问题，请发送邮件至 <a href="mailto:jyinaune@163.com">jyinaune@163.com</a>。</p>
 
       <h2>7. 第三方内容与儿童隐私</h2>
       <p>您应仅处理自己拥有权利或已获授权的内容，并遵守内容来源平台的规则。应用不以收集儿童个人信息为目的；未成年人应在监护人指导下使用。</p>
