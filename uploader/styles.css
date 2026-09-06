@@ -55,6 +55,12 @@ textarea {
   padding: 32px 0;
 }
 
+.site-header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 14px;
+}
+
 .workspace {
   display: grid;
   grid-template-columns: minmax(320px, 420px) minmax(0, 1fr);
@@ -112,6 +118,27 @@ h2 {
   display: grid;
   justify-items: end;
   gap: 8px;
+}
+
+.language-switch {
+  display: flex;
+  gap: 4px;
+}
+
+.language-switch button {
+  min-width: 34px;
+  height: 28px;
+  padding: 0 7px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #171922;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.language-switch button[aria-pressed="true"] {
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 .account-button {

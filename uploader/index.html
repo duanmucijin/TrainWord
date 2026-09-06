@@ -4,58 +4,65 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="dark light">
-    <title>大神去水印</title>
+    <meta id="page-description" name="description" content="大神水印神器在线素材提取工具。">
+    <title>大神水印神器</title>
     <link rel="stylesheet" href="/uploader/styles.css">
   </head>
   <body>
     <main class="shell">
+      <header class="site-header">
+        <nav class="language-switch" aria-label="语言 / Language">
+          <button type="button" data-set-language="zh" aria-pressed="true">中文</button>
+          <button type="button" data-set-language="en" aria-pressed="false">EN</button>
+        </nav>
+      </header>
       <section class="workspace">
         <div class="panel input-panel">
           <div class="topline">
             <div>
-              <p class="eyebrow">大神去水印</p>
-              <h1>素材提取</h1>
+              <p class="eyebrow" data-i18n="brand">大神水印神器</p>
+              <h1 data-i18n="extractMedia">素材提取</h1>
             </div>
             <div class="status-stack">
-              <button id="accountToggleButton" class="account-button" type="button">检查账号</button>
+              <button id="accountToggleButton" class="account-button" type="button" data-i18n="checkAccount">检查账号</button>
             </div>
           </div>
 
-          <section class="account-panel hidden" id="accountPanel" aria-label="账号登录">
-            <div class="account-tabs" role="tablist" aria-label="账号操作">
-              <button id="loginTabButton" class="active" type="button" aria-pressed="true">登录</button>
-              <button id="registerTabButton" type="button" aria-pressed="false">注册</button>
+          <section class="account-panel hidden" id="accountPanel" aria-label="账号登录" data-i18n-aria-label="accountLogin">
+            <div class="account-tabs" role="tablist" aria-label="账号操作" data-i18n-aria-label="accountActions">
+              <button id="loginTabButton" class="active" type="button" aria-pressed="true" data-i18n="login">登录</button>
+              <button id="registerTabButton" type="button" aria-pressed="false" data-i18n="register">注册</button>
             </div>
-            <label class="field-label" for="usernameInput">用户名</label>
+            <label class="field-label" for="usernameInput" data-i18n="username">用户名</label>
             <input id="usernameInput" class="input" autocomplete="username">
-            <label class="field-label" for="passwordInput">密码</label>
+            <label class="field-label" for="passwordInput" data-i18n="password">密码</label>
             <input id="passwordInput" class="input" type="password" autocomplete="current-password">
             <div class="account-actions">
-              <button id="submitAccountButton" class="primary-button" type="button">登录</button>
-              <button id="logoutButton" class="secondary-button hidden" type="button">退出</button>
+              <button id="submitAccountButton" class="primary-button" type="button" data-i18n="login">登录</button>
+              <button id="logoutButton" class="secondary-button hidden" type="button" data-i18n="logout">退出</button>
             </div>
             <p id="accountMessage" class="account-message" role="status"></p>
           </section>
 
           <details class="api-settings hidden" id="apiSettings">
-            <summary>开发调试</summary>
+            <summary data-i18n="developerDebug">开发调试</summary>
             <div class="api-row">
               <input id="apiBaseInput" class="input" autocomplete="off" spellcheck="false">
-              <button id="saveApiButton" class="icon-button" type="button" title="应用调试配置" aria-label="应用调试配置">
-                <span>应用</span>
+              <button id="saveApiButton" class="icon-button" type="button" title="应用调试配置" aria-label="应用调试配置" data-i18n-title="applyDebug" data-i18n-aria-label="applyDebug">
+                <span data-i18n="apply">应用</span>
               </button>
             </div>
-            <p class="debug-status" id="statusPill">服务检测中</p>
+            <p class="debug-status" id="statusPill" data-i18n="checkingService">服务检测中</p>
           </details>
 
-          <label class="field-label" for="shareInput">分享内容</label>
-          <textarea id="shareInput" class="textarea" spellcheck="false" placeholder="粘贴平台分享文案或链接"></textarea>
+          <label class="field-label" for="shareInput" data-i18n="sharedContent">分享内容</label>
+          <textarea id="shareInput" class="textarea" spellcheck="false" placeholder="粘贴平台分享文案或链接" data-i18n-placeholder="sharePlaceholder"></textarea>
 
           <div class="actions">
             <button id="extractButton" class="primary-button" type="button">
-              <span id="extractButtonText">开始提取</span>
+              <span id="extractButtonText" data-i18n="startExtraction">开始提取</span>
             </button>
-            <button id="clearButton" class="secondary-button" type="button">清空</button>
+            <button id="clearButton" class="secondary-button" type="button" data-i18n="clear">清空</button>
           </div>
 
           <div class="progress" id="progressBar" aria-hidden="true">
@@ -66,15 +73,15 @@
         <section class="panel result-panel" id="resultPanel">
           <div class="empty-state" id="emptyState">
             <div class="empty-mark"></div>
-            <p>等待提取结果</p>
+            <p data-i18n="waitingForResults">等待提取结果</p>
           </div>
           <div class="result-content hidden" id="resultContent">
             <div class="result-head">
               <div>
-                <p class="eyebrow" id="platformName">平台</p>
-                <h2 id="resultTitle">提取结果</h2>
+                <p class="eyebrow" id="platformName" data-i18n="platform">平台</p>
+                <h2 id="resultTitle" data-i18n="extractionResults">提取结果</h2>
               </div>
-              <button id="copyTextButton" class="secondary-button small" type="button">复制文案</button>
+              <button id="copyTextButton" class="secondary-button small" type="button" data-i18n="copyText">复制文案</button>
             </div>
             <pre id="textOutput" class="text-output"></pre>
             <div id="mediaGrid" class="media-grid"></div>
@@ -82,8 +89,8 @@
         </section>
       </section>
       <footer class="site-footer">
-        <a href="/uploader/privacy/">隐私政策</a>
-        <a href="/uploader/support/">技术支持</a>
+        <a href="/uploader/privacy/" data-localized-link="privacy" data-i18n="privacyPolicy">隐私政策</a>
+        <a href="/uploader/support/" data-localized-link="support" data-i18n="support">技术支持</a>
       </footer>
     </main>
 
